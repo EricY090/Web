@@ -1,3 +1,5 @@
 # README
+This project is created through Vite (React + JavaScript)
 
-Live Dev: npm run dev
+Run: npm run dev
+(In addition, needs to install react-router-dom)
