@@ -1,2 +1,3 @@
-# Web
- 
+# README
+
+Live Dev: npm run dev
