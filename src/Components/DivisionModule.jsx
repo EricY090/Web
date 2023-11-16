@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import StatusBar from "./StatusBar";
 
 const DivisionModule = () => {
@@ -44,27 +44,19 @@ const DivisionModule = () => {
   };
 
   return (
-    <div className="p-4 bg-purple-100 rounded-lg">
-      <h1 className="text-2xl font-bold text-purple-800 mb-4">
-        Division Module
-      </h1>
-      <p className="text-lg font-semibold text-purple-800">
+    <div>
+      <h1>Division Module</h1>
+      <p>
         Solve the division problem: {num1} ÷ {num2} =
       </p>
       <input
-        className="p-2 mt-2 border-2 border-purple-300 rounded"
         type="number"
         value={userAnswer}
         onChange={(e) => setUserAnswer(e.target.value)}
       />
-      <button
-        className="mt-2 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700"
-        onClick={checkAnswer}
-      >
-        Check Answer
-      </button>
+      <button onClick={checkAnswer}>Check Answer</button>
       {isCorrect !== null && (
-        <p className="mt-4 text-lg font-semibold text-purple-800">
+        <p>
           {isCorrect ? "Correct!" : "Wrong!"} Total correct: {correctAnswers}/
           {totalQuestions}
         </p>
