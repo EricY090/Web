@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import StatusBar from "./StatusBar";
 
-const AdditionModule = () => {
+const DivisionModule = () => {
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
   const [userAnswer, setUserAnswer] = useState("");
@@ -11,19 +11,26 @@ const AdditionModule = () => {
 
   useEffect(() => {
     generateProblem();
-  }, []); // Run this effect when the component mounts
+  }, []);
 
   const generateProblem = () => {
-    const newNum1 = Math.floor(Math.random() * 100); // Generate random number between 0 and 9
-    const newNum2 = Math.floor(Math.random() * 100);
+    let newNum1 = Math.floor(Math.random() * 625); // Generate random number between 0 and 625 for division
+    let newNum2 = Math.floor(Math.random() * 25); // Generate random divisor between 0 and 25
+
+    // Ensure num1 is divisible by num2 without a remainder
+    while (newNum1 % newNum2 !== 0) {
+      newNum1 = Math.floor(Math.random() * 625);
+      newNum2 = Math.floor(Math.random() * 25);
+    }
+
     setNum1(newNum1);
     setNum2(newNum2);
     setUserAnswer("");
   };
 
   const checkAnswer = () => {
-    const answer = num1 + num2;
-    const userEnteredAnswer = parseInt(userAnswer, 10);
+    const answer = num1 / num2;
+    const userEnteredAnswer = parseFloat(userAnswer);
 
     if (userEnteredAnswer === answer) {
       setIsCorrect(true);
@@ -37,19 +44,27 @@ const AdditionModule = () => {
   };
 
   return (
-    <div>
-      <h1>Addition Module</h1>
-      <p>
-        Solve the addition problem: {num1} + {num2} =
+    <div className="p-4 bg-purple-100 rounded-lg">
+      <h1 className="text-2xl font-bold text-purple-800 mb-4">
+        Division Module
+      </h1>
+      <p className="text-lg font-semibold text-purple-800">
+        Solve the division problem: {num1} ÷ {num2} =
       </p>
       <input
+        className="p-2 mt-2 border-2 border-purple-300 rounded"
         type="number"
         value={userAnswer}
         onChange={(e) => setUserAnswer(e.target.value)}
       />
-      <button onClick={checkAnswer}>Check Answer</button>
+      <button
+        className="mt-2 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700"
+        onClick={checkAnswer}
+      >
+        Check Answer
+      </button>
       {isCorrect !== null && (
-        <p>
+        <p className="mt-4 text-lg font-semibold text-purple-800">
           {isCorrect ? "Correct!" : "Wrong!"} Total correct: {correctAnswers}/
           {totalQuestions}
         </p>
@@ -62,4 +77,4 @@ const AdditionModule = () => {
   );
 };
 
-export default AdditionModule;
+export default DivisionModule;
