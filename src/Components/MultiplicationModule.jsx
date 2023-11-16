@@ -14,7 +14,7 @@ const MultiplicationModule = ({ updateProgress }) => {
   }, []);
 
   const generateProblem = () => {
-    const newNum1 = Math.floor(Math.random() * 12); // Generate random number between 0 and 12 for multiplication tables
+    const newNum1 = Math.floor(Math.random() * 12);
     const newNum2 = Math.floor(Math.random() * 12);
     setNum1(newNum1);
     setNum2(newNum2);
@@ -22,7 +22,7 @@ const MultiplicationModule = ({ updateProgress }) => {
   };
 
   const checkAnswer = () => {
-    const answer = num1 / num2;
+    const answer = num1 * num2;
     const userEnteredAnswer = parseFloat(userAnswer);
 
     const correct = userEnteredAnswer === answer;

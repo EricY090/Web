@@ -4,6 +4,7 @@ import SubtractionModule from "../Components/SubtractionModule";
 import MultiplicationModule from "../Components/MultiplicationModule";
 import DivisionModule from "../Components/DivisionModule";
 import StatusBar from "../Components/StatusBar";
+import Timer from "../Components/Timer";
 
 const HomePage = () => {
   const [progress, setProgress] = useState({
@@ -22,6 +23,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <Timer />
       <StatusBar
         correctAnswers={progress.correctAnswers}
         totalQuestions={progress.totalQuestions}
