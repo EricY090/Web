@@ -1,13 +1,13 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import StatusBar from "./StatusBar";
 
-const DivisionModule = () => {
+const DivisionModule = ({ updateProgress }) => {
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
   const [userAnswer, setUserAnswer] = useState("");
   const [isCorrect, setIsCorrect] = useState(null);
-  const [totalQuestions, setTotalQuestions] = useState(0);
-  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [localCorrectAnswers, setLocalCorrectAnswers] = useState(0);
+  const [localTotalQuestions, setLocalTotalQuestions] = useState(0);
 
   useEffect(() => {
     generateProblem();
@@ -26,45 +26,55 @@ const DivisionModule = () => {
     setNum1(newNum1);
     setNum2(newNum2);
     setUserAnswer("");
+    setIsCorrect(null);
   };
 
   const checkAnswer = () => {
     const answer = num1 / num2;
     const userEnteredAnswer = parseFloat(userAnswer);
 
-    if (userEnteredAnswer === answer) {
-      setIsCorrect(true);
-      setCorrectAnswers(correctAnswers + 1);
-    } else {
-      setIsCorrect(false);
+    const correct = userEnteredAnswer === answer;
+    setIsCorrect(correct);
+    updateProgress(correct);
+
+    // Update local module progress
+    setLocalTotalQuestions(localTotalQuestions + 1);
+    if (correct) {
+      setLocalCorrectAnswers(localCorrectAnswers + 1);
     }
 
-    setTotalQuestions(totalQuestions + 1);
     generateProblem();
   };
 
   return (
-    <div>
-      <h1>Division Module</h1>
-      <p>
+    <div className="p-4 bg-purple-100 rounded-lg">
+      <h1 className="text-2xl font-bold text-purple-800 mb-4">
+        Division Module
+      </h1>
+      <p className="text-lg font-semibold text-purple-800">
         Solve the division problem: {num1} ÷ {num2} =
       </p>
       <input
+        className="p-2 mt-2 border-2 border-purple-300 rounded"
         type="number"
         value={userAnswer}
         onChange={(e) => setUserAnswer(e.target.value)}
       />
-      <button onClick={checkAnswer}>Check Answer</button>
+      <button
+        className="mt-2 px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700"
+        onClick={checkAnswer}
+      >
+        Check Answer
+      </button>
       {isCorrect !== null && (
-        <p>
-          {isCorrect ? "Correct!" : "Wrong!"} Total correct: {correctAnswers}/
-          {totalQuestions}
+        <p className="mt-4 text-lg font-semibold text-purple-800">
+          {isCorrect ? "Correct!" : "Wrong!"}
         </p>
       )}
-      <StatusBar
-        correctAnswers={correctAnswers}
-        totalQuestions={totalQuestions}
-      />
+      {/* Individual module progress */}
+      <p className="mt-2 text-lg font-semibold text-purple-800">
+        Module Progress: {localCorrectAnswers}/{localTotalQuestions}
+      </p>
     </div>
   );
 };
