@@ -22,17 +22,26 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <div className="container mx-auto p-4">
       <Timer />
       <StatusBar
         correctAnswers={progress.correctAnswers}
         totalQuestions={progress.totalQuestions}
       />
-      <div className="flex justify-around mt-4">
-        <AdditionModule updateProgress={updateProgress} />
-        <SubtractionModule updateProgress={updateProgress} />
-        <MultiplicationModule updateProgress={updateProgress} />
-        <DivisionModule updateProgress={updateProgress} />
+
+      <div className="flex flex-wrap justify-center gap-4 mt-4">
+        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <AdditionModule updateProgress={updateProgress} />
+        </div>
+        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <SubtractionModule updateProgress={updateProgress} />
+        </div>
+        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <MultiplicationModule updateProgress={updateProgress} />
+        </div>
+        <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <DivisionModule updateProgress={updateProgress} />
+        </div>
       </div>
     </div>
   );

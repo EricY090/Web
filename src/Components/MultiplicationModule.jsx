@@ -14,8 +14,8 @@ const MultiplicationModule = ({ updateProgress }) => {
   }, []);
 
   const generateProblem = () => {
-    const newNum1 = Math.floor(Math.random() * 12);
-    const newNum2 = Math.floor(Math.random() * 12);
+    const newNum1 = Math.floor(Math.random() * 25);
+    const newNum2 = Math.floor(Math.random() * 25);
     setNum1(newNum1);
     setNum2(newNum2);
     setUserAnswer("");
