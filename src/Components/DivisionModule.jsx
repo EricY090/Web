@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 
-const AdditionModule = ({ updateProgress }) => {
+const DivisionModule = ({ updateProgress }) => {
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
   const [userAnswer, setUserAnswer] = useState("");
@@ -11,20 +11,27 @@ const AdditionModule = ({ updateProgress }) => {
 
   useEffect(() => {
     generateProblem();
-  }, []); // Run this effect when the component mounts
+  }, []);
 
   const generateProblem = () => {
-    const newNum1 = Math.floor(Math.random() * 1000);
-    const newNum2 = Math.floor(Math.random() * 1000);
+    let newNum1 = Math.floor(Math.random() * 625); // Generate random number between 0 and 625 for division
+    let newNum2 = Math.floor(Math.random() * 25); // Generate random divisor between 0 and 25
+
+    // Ensure num1 is divisible by num2 without a remainder
+    while (newNum1 % newNum2 !== 0) {
+      newNum1 = Math.floor(Math.random() * 625);
+      newNum2 = Math.floor(Math.random() * 25);
+    }
+
     setNum1(newNum1);
     setNum2(newNum2);
     setUserAnswer("");
-    setIsCorrect(null); // Reset correctness state for the new problem
+    setIsCorrect(null);
   };
 
   const checkAnswer = () => {
-    const answer = num1 + num2;
-    const userEnteredAnswer = parseInt(userAnswer, 10);
+    const answer = num1 / num2;
+    const userEnteredAnswer = parseFloat(userAnswer);
 
     const correct = userEnteredAnswer === answer;
     setIsCorrect(correct);
@@ -42,10 +49,10 @@ const AdditionModule = ({ updateProgress }) => {
   return (
     <div className="p-4 bg-purple-100 rounded-lg">
       <h1 className="text-2xl font-bold text-purple-800 mb-4">
-        Addition Module
+        Division Module
       </h1>
       <p className="text-lg font-semibold text-purple-800">
-        Solve the addition problem: {num1} + {num2} =
+        Solve the division problem: {num1} ÷ {num2} =
       </p>
       <input
         className="p-2 mt-2 border-2 border-purple-300 rounded"
@@ -72,4 +79,4 @@ const AdditionModule = ({ updateProgress }) => {
   );
 };
 
-export default AdditionModule;
+export default DivisionModule;
