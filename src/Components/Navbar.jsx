@@ -7,7 +7,15 @@ const Navbar = () => {
       <ul className="flex">
         <li className="ml-4">
           <Link to="/" className="text-purple-800 hover:text-purple-600">
-            Home
+            Play
+          </Link>
+        </li>
+        <li className="ml-4">
+          <Link
+            to="/leaderboard-page"
+            className="text-purple-800 hover:text-purple-600"
+          >
+            Leaderboard
           </Link>
         </li>
         <li className="ml-4">
