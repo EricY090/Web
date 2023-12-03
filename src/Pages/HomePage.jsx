@@ -22,12 +22,13 @@ const HomePage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-20">
       <Timer />
       <StatusBar
         correctAnswers={progress.correctAnswers}
         totalQuestions={progress.totalQuestions}
       />
+      <div className="text-lg font-bold text-purple-600">Choose a Module to play!</div>
 
       <div className="flex flex-wrap justify-center gap-4 mt-4">
         <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">

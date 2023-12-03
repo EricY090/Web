@@ -43,7 +43,7 @@ const Timer = () => {
 
   return (
     <div className="text-center py-4">
-      <h2 className="text-4xl font-bold mb-4">
+      <h2 className="text-4xl font-bold text-purple-300 mb-4">
         {formatTimeUnit(time.hours)}:{formatTimeUnit(time.minutes)}:
         {formatTimeUnit(time.seconds)}
       </h2>
