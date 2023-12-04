@@ -2,7 +2,7 @@ import Experience from "../Components/Experience";
 
 const SecondPage = () => {
   return (
-    <div>
+    <div className="">
       <Experience />
     </div>
   );
