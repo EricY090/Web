@@ -98,7 +98,7 @@ const HomePage = () => {
         <form onSubmit={handleNameSubmit} className="my-4">
           <label
             htmlFor="username"
-            className="block mb-2 text-lg font-semibold"
+            className="block mb-2 text-lg font-bold text-purple-300"
           >
             Enter your name:
           </label>
