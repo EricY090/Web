@@ -4,7 +4,11 @@ import SecondPage from "./Pages/SettingsPage";
 import LeaderboardPage from "./Pages/LeaderboardPage";
 import Navbar from "./Components/Navbar";
 import "./index.css";
+import { useEffect, useState } from "react";
 
+
+
+var dark = 0
 function App() {
   return (
     <Router>

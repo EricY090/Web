@@ -45,7 +45,7 @@ const SubtractionModule = ({ updateProgress }) => {
         Subtraction Module
       </h1>
       <p className="text-lg font-semibold text-purple-800">
-        Solve the subtraction problem: {num1} - {num2} =
+        Solve the subtraction problem: <br></br>{num1} - {num2} =
       </p>
       <input
         className="p-2 mt-2 border-2 border-purple-300 rounded"
