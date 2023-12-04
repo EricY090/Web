@@ -16,7 +16,7 @@ const Leaderboard = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-semibold mb-4">Leaderboard</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-purple-400">Leaderboard</h2>
       <table className="w-full">
         <thead>
           <tr>
@@ -32,9 +32,9 @@ const Leaderboard = () => {
         <tbody>
           {leaderboardData.map((user, index) => (
             <tr key={index}>
-              <td className="py-2 px-4">{user.name}</td>
-              <td className="py-2 px-4">{user.progress.correctAnswers}</td>
-              <td className="py-2 px-4">{user.progress.totalQuestions}</td>
+              <td className="py-2 px-4 font-semibold text-blue-500">{user.name}</td>
+              <td className="py-2 px-4 font-semibold text-blue-500">{user.progress.correctAnswers}</td>
+              <td className="py-2 px-4 font-semibold text-blue-500">{user.progress.totalQuestions}</td>
             </tr>
           ))}
         </tbody>
