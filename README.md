@@ -6,4 +6,4 @@ Vite requires Node.js version 14.18+ or 16+.
 2. Install react-router-dom 
 3. Set up Tailwind CSS with vite
 
-Run: npm run dev
+Live time deployemnt: npm run dev
