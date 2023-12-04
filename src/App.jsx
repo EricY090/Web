@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import SecondPage from "./Pages/SettingsPage";
 import LeaderboardPage from "./Pages/LeaderboardPage";
+import HelpPage from "./Pages/HelpPage";
 import Navbar from "./Components/Navbar";
 import "./index.css";
 import { useEffect, useState } from "react";
@@ -42,8 +43,9 @@ function App() {
         } className="absolute right-2 text-lg font-semibold text-purple-600 bg-blue-100 py-2">Change the Mode</button>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/second-page" element={<SecondPage />} />
-          <Route path="/leaderboard-page" element={<LeaderboardPage />} />
+          <Route path="/settings" element={<SecondPage />} />
+          <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/help" element={<HelpPage />} />
         </Routes>
       </div>
     </Router>
