@@ -12,7 +12,7 @@ const Navbar = () => {
         </li>
         <li className="ml-4">
           <Link
-            to="/leaderboard-page"
+            to="/leaderboard"
             className="text-purple-800 hover:text-purple-600"
           >
             Leaderboard
@@ -20,7 +20,15 @@ const Navbar = () => {
         </li>
         <li className="ml-4">
           <Link
-            to="/second-page"
+            to="/help"
+            className="text-purple-800 hover:text-purple-600"
+          >
+            Help
+          </Link>
+        </li>
+        <li className="ml-4">
+          <Link
+            to="/settings"
             className="text-purple-800 hover:text-purple-600"
           >
             Settings
