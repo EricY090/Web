@@ -13,7 +13,7 @@ const Help = () => {
           <h6 className="text-4xl">1. Enter Your Name to Get Started!</h6>
           <img
             className="w-full h-auto"
-            src="src/Pages/img/help_image1.png"
+            src="\images\help_image1.png"
             alt="First step"
           />
           <br />
@@ -24,7 +24,7 @@ const Help = () => {
           <h6 className="text-4xl">2. Practice and Ace the Tests!</h6>
           <img
             className="w-full h-auto"
-            src="src/Pages/img/help_image2.png"
+            src="\images\help_image2.png"
             alt="Second step"
           />
           <br />
