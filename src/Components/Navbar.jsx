@@ -28,10 +28,10 @@ const Navbar = () => {
         </li>
         <li className="ml-4">
           <Link
-            to="/settings"
+            to="/ratings"
             className="text-purple-800 hover:text-purple-600"
           >
-            Settings
+            Rate and Comments
           </Link>
         </li>
         {/* more navigation links as needed */}
