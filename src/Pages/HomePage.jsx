@@ -5,6 +5,8 @@ import MultiplicationModule from "../Components/MultiplicationModule";
 import DivisionModule from "../Components/DivisionModule";
 import StatusBar from "../Components/StatusBar";
 import Timer from "../Components/Timer";
+import Collapse from "../Components/Collapse";
+
 
 const HomePage = () => {
   const [users, setUsers] = useState([]);
@@ -68,7 +70,7 @@ const HomePage = () => {
     const userName = event.target.username.value;
     handleUserChange(userName);
   };
-
+  
   return (
     <div className="container mx-auto p-4">
       {currentUser ? (
@@ -81,16 +83,18 @@ const HomePage = () => {
 
           <div className="flex flex-wrap justify-center gap-4 mt-4">
             <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-              <AdditionModule updateProgress={updateProgress} />
+              <Collapse module={<AdditionModule updateProgress={updateProgress}></AdditionModule>} title = {"ADDITION"}> </Collapse>
             </div>
             <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-              <SubtractionModule updateProgress={updateProgress} />
+              <Collapse module={<SubtractionModule updateProgress={updateProgress}></SubtractionModule>} title = {"SUBTRACTION"}> </Collapse>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 mt-4">
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+              <Collapse module={<MultiplicationModule updateProgress={updateProgress}></MultiplicationModule>} title = {"MULTIPLICATION"}> </Collapse>
             </div>
             <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-              <MultiplicationModule updateProgress={updateProgress} />
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-              <DivisionModule updateProgress={updateProgress} />
+              <Collapse module={<DivisionModule updateProgress={updateProgress}></DivisionModule>} title = {"DIVISION"}> </Collapse>
             </div>
           </div>
         </>
@@ -98,7 +102,7 @@ const HomePage = () => {
         <form onSubmit={handleNameSubmit} className="my-4">
           <label
             htmlFor="username"
-            className="block mb-2 text-lg font-semibold"
+            className="block mb-2 text-lg font-bold text-purple-300"
           >
             Enter your name:
           </label>

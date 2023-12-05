@@ -51,6 +51,7 @@ const AdditionModule = ({ updateProgress }) => {
         className="p-2 mt-2 border-2 border-purple-300 rounded"
         type="number"
         value={userAnswer}
+        placeholder="Enter numbers"
         onChange={(e) => setUserAnswer(e.target.value)}
       />
       <button
