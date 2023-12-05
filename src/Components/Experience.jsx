@@ -59,11 +59,19 @@ const Experience = () => {
   };
 
   return (
-    <div className="p-4 bg-purple-100 rounded-lg">
+    <div className="p-10 bg-purple-100 rounded-lg">
       <h2 className="text-2xl font-bold text-purple-800 mb-4">
         Share Your Experience
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
+        {renderStarRating("Ease of Application")}
+        {renderStarRating("I would like to use this system frequently")}
+        {renderStarRating("I can learn to use this system very quickly.")}
+        {renderStarRating("I learn how to do Additions")}
+        {renderStarRating("I learn how to do Subtractions")}
+        {renderStarRating("I learn how to do Multiplications")}
+        {renderStarRating("I learn how to do Divisions")}
+        {renderStarRating("Overall Experience Today")}
         <div>
           <label className="block text-lg font-semibold text-purple-800">
             Would You like to share any comments? :
@@ -74,9 +82,6 @@ const Experience = () => {
             onChange={handleCommentChange}
           />
         </div>
-        {renderStarRating("Your Experience Today")}
-        {renderStarRating("Ease of Application")}
-        {/* more fields as needed */}
         <button
           type="submit"
           className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700"
