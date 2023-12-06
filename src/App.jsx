@@ -40,7 +40,7 @@ function App() {
         <Navbar />
         <button onClick = {
           () => {click()}
-        } className="absolute right-2 text-lg font-semibold text-purple-600 bg-blue-100 py-2">Change the Mode</button>
+        } className="absolute right-2 text-lg font-semibold text-white bg-purple-600 py-2">Change the Mode</button>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/ratings" element={<RatePage />} />
