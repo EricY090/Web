@@ -4,7 +4,7 @@ import name from "../Pages/img/Tutorial- Enter Name.png";
 
 const Help = () => {
   return (
-    <div className="text-center font-bold text-blue-300 leading-30">
+    <div className="text-center font-bold text-white leading-30">
       <h2 className="text-6xl">Tutorial</h2>
       <br />
       <br />
