@@ -26,7 +26,6 @@ const DivisionModule = ({ updateProgress }) => {
     setNum1(newNum1);
     setNum2(newNum2);
     setUserAnswer("");
-    setIsCorrect(null);
   };
 
   const checkAnswer = () => {

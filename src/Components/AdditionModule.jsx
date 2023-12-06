@@ -19,7 +19,6 @@ const AdditionModule = ({ updateProgress }) => {
     setNum1(newNum1);
     setNum2(newNum2);
     setUserAnswer("");
-    setIsCorrect(null); // Reset correctness state for the new problem
   };
 
   const checkAnswer = () => {
