@@ -116,7 +116,7 @@ const HomePage = () => {
             />
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+              className="bg-blue-600 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-blue-700 focus:outline-none focus:bg-blue-700"
             >
               Submit
             </button>
